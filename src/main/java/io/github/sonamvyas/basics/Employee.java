@@ -5,6 +5,28 @@ public class Employee implements Comparable<Employee> {
 	private String firstname;
 	private String lastName;
 
+	/**
+	 * Specify Default constructor after creating Parameterized constructor as it
+	 * will not be available after that
+	 */
+	public Employee() {
+
+	}
+
+	/**
+	 * Parameterized constructor for easy initialization of Object
+	 * 
+	 * @param id
+	 * @param firstname
+	 * @param lastName
+	 */
+	public Employee(Integer id, String firstname, String lastName) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastName = lastName;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -43,8 +65,7 @@ public class Employee implements Comparable<Employee> {
 	 * 
 	 */
 	public int compareTo(Employee o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.id.compareTo(o.getId());
 	}
 
 }
